@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(244, 212, 103);
+}
+
+header{
+    text-align: center;
+}
+
+.form{
+    text-align: center;
+    margin: 1.3rem;
+}
+
+.form input{
+    width:25rem ;
+    height: 2.5rem;
+    padding: .5rem;
+    outline: none;
+    border-radius: 10px;
+}
+
+.card{
+    background-color:rgba(128, 128, 128, 0.7);
+    border-radius: 1rem;   
+}
+
+.card img{
+    width: 200px;
+    height: 300px;
+    border-radius:1rem 1rem 0 0 ;
+    transition: all 0.5s ease-in-out;  
+}
+
+.img-ctn{
+    overflow: hidden;
+}
+.card img:hover{
+    transform: scale(.9);
+    cursor: pointer;    
+}
+
+/* .card-ctn{
+    
+} */
+
+.card-ctn p{
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.list{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    list-style-type: none;
+    padding-left: 15px;
+    padding: 2rem;
+    font-size: 1.3rem;
+    width: 200px;
+    height: 300px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    gap: 1rem;
+    
+}
+
+.list li{
+    gap:1rem;
+    display: flex;
+    flex: start;
+    width: 180px;
+    height: 100px;
+}
+
+.player-ctn{
+    display: flex;
+    background-image: url("https://wallpaperaccess.com/full/1305339.jpg");
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap:1rem;
+    align-items: center;
+    margin: 2rem;
+    border-radius: 1rem;
+    padding: 1rem;  
+}
+
+@media screen and (max-width: 420px) {
+    .all{
+        width: fit-content;
+    }  
+    .form input{
+        width: fit-content;
+    }
+
+}
+
+@media screen and (max-width: 316px) {
+    header{
+        width: fit-content;
+        margin: auto;
+    }  
+    .form input{
+        width: fit-content;
+    }
+}
