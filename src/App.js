@@ -1,12 +1,15 @@
-import CardContainer from './components/CardContainer';
+
 import Header from './components/Header';
 import  './App.css';
+import CardContainer from './components/CardContainer.jsx';
+
 
 function App() {
+  
   return (
     <div>
       <Header/>
-      <CardContainer/>
+      <CardContainer/>      
     </div>
   );
 }

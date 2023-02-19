@@ -45,10 +45,6 @@ header{
     cursor: pointer;    
 }
 
-/* .card-ctn{
-    
-} */
-
 .card-ctn p{
     text-align: center;
     color: white;
@@ -102,17 +98,11 @@ header{
         width: fit-content;
     }  
     .form input{
-        width: fit-content;
+    width: fit-content;
     }
-
-}
-
-@media screen and (max-width: 316px) {
     header{
-        width: fit-content;
-        margin: auto;
+        width: max-content;
+        margin:1px auto;
     }  
-    .form input{
-        width: fit-content;
-    }
 }
+
