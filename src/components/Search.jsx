@@ -1,62 +1,57 @@
-import { useEffect } from "react";
+import { useState } from "react";
+import PlayerCard from "./PlayerCard";
 
-const Search = ({ data, state, setState, setSearch, search }) => {
-//****************************** */
-//   const searchTerm = e.target.value.toLowerCase();
-
-// console.log('search term:', searchTerm);
-
-// const results = data.filter((post) => {
-//   if (!searchTerm) return true;
-//   return post.name.toLowerCase().includes(searchTerm);
-// });
-
-// console.log('search results:', results);
-
-// setState({
-//   search: e.target.value,
-//   list: results,
-// });
-//************************************** */
-// useEffect(() => {
-// data.map((item)=>
-// item )
-  
-// }, [])
-
+const Search = ({ data }) => {
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (e) => {
-    // e.preventDefault()
-
-    const results = data.filter((post) => {
-      if (e.target.value === "") return post;;
-      
-      return post.name.toLowerCase().includes(e.target.value.toLowerCase());
-    });
-    setState({
-      search: e.target.value,
-      list: results,
-    });
+    setSearchTerm(e.target.value.toLowerCase());
   };
 
-  
+  let filteredData = data.filter((player) =>
+    player.name.toLowerCase().includes(searchTerm)
+  );
+
+  if (searchTerm === "") {
+    filteredData = data;
+  }
 
   return (
     <form className="form">
       <input
+        type="text"
+        placeholder="Search player..."
+        value={searchTerm}
         onChange={handleChange}
-        className="input"
-        value={state.search}
-        type="search"
-        placeholder="Search Player..."
       />
+      <div className="cards-container">
+        {filteredData.map((player) => (
+          <PlayerCard key={player.name} {...player} />
+        ))}
+      </div>
     </form>
   );
 };
 
 export default Search;
 
-//********************* */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const Search = ({ setSearch, }) => {
 //   const handleInputChange = (event) => {
@@ -115,3 +110,41 @@ export default Search;
 //   };
 
 //   export default Search;
+
+
+//**************************************** */
+
+// import { useEffect } from "react";
+
+// const Search = ({ data, state, setState, setSearch, search }) => {
+
+//   const handleChange = (e) => {
+//     // e.preventDefault()
+
+//     const results = data.filter((post) => {
+//       if (e.target.value === "") return post;;
+      
+//       return post.name.toLowerCase().includes(e.target.value.toLowerCase());
+//     });
+//     setState({
+//       search: e.target.value,
+//       list: results,
+//     });
+//   };
+
+  
+
+//   return (
+//     <form className="form">
+//       <input
+//         onChange={handleChange}
+//         className="input"
+//         value={state.search}
+//         type="search"
+//         placeholder="Search Player..."
+//       />
+//     </form>
+//   );
+// };
+
+// export default Search;
